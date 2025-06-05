@@ -1,0 +1,23 @@
+import React from 'react';
+import Sidenav from '../components/Sidenav';
+import Navbar from '../components/Navbar';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+
+
+export default function Contacts() {
+    return (
+        <>
+            <Navbar />
+            <Box height={30}/>
+            <Box sx={{ display: 'flex' }}>
+                <Sidenav />
+                <h1>Contacts</h1>
+            </Box>
+            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      </Box>
+        </>
+    );
+}
+
+//Mettre une liste déroulantes avec les différentes personnes qui ont accès à la gestion de stocks
