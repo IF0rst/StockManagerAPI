@@ -41,8 +41,8 @@ export const authWhoamiGet = (req,res) =>{
     }
 
     try{
-        const {username,userId} = checkJWT(jwt);
-        res.status(200).json({error:false,username,userId});
+        const {username,user_id} = checkJWT(jwt);
+        res.status(200).json({error:false,username,user_id});
     }catch (e){
          res.status(401).json({error:true,message:e.message});
     }
