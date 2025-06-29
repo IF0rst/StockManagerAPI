@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import 'dotenv/config'
 
 const createToken = (userId) => {
-    return jwt.sign({user_id : userId}, process.env.JWT_SECRET, {expiresIn: '15m'})
+    return jwt.sign({user_id : userId}, process.env.JWT_SECRET, {expiresIn: '900m'})
 }
 
 export const register = (username, password) => {

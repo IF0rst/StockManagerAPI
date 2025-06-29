@@ -42,6 +42,7 @@ export const initTables = () => {
     CREATE TABLE IF NOT EXISTS storage (
       storage_id TEXT PRIMARY KEY,
       inventory_id TEXT NOT NULL,
+      name TEXT NOT NULL,
       FOREIGN KEY (inventory_id) REFERENCES inventory(inventory_id)
     )
   `;

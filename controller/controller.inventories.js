@@ -16,21 +16,6 @@ export function createInventory(req, res) {
   }
 }
 
-export function addStorage(req, res) {
-  const { user_id } = req.user;
-  const inventory_id = req.params.id;
-
-  try {
-    const result = InventoryService.addStorageToInventory(inventory_id, user_id);
-    res.status(201).json(result);
-  } catch (err) {
-    if (err.message === "Inventory not found") {
-      return res.status(404).json({ error: "Inventory not found" });
-    }
-    res.status(500).json({ error: "Failed to add storage", details: err.message });
-  }
-}
-
 export function getInventory(req, res) {
   const { user_id } = req.user;
   const inventory_id = req.params.id;

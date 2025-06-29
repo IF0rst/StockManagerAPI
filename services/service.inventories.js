@@ -19,19 +19,6 @@ export function checkInventoryOwner(inventory_id, user_id) {
   return !!result;
 }
 
-export function addStorageToInventory(inventory_id, user_id) {
-  const owns = checkInventoryOwner(inventory_id, user_id);
-  if (!owns) throw new Error("Inventory not found");
-
-  const storage_id = uuidv4();
-  db.prepare(`
-    INSERT INTO storage (storage_id, inventory_id)
-    VALUES (?, ?)
-  `).run(storage_id, inventory_id);
-
-  return { storage_id, inventory_id };
-}
-
 export function getInventoryWithStorages(inventory_id, user_id) {
   const owns = checkInventoryOwner(inventory_id, user_id);
   if (!owns) throw new Error("Inventory not found");
